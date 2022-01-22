@@ -7,8 +7,8 @@
           <p>Welcome to shopping mall！</p>
           <p>
             <span>Please</span>
-            <a href="###">Login</a>
-            <a href="###" class="register">Sign up</a>
+            <router-link to="/login">Login</router-link>
+            <router-link to="/register">Sign Up</router-link>
           </p>
         </div>
         <div class="typeList">
@@ -26,9 +26,9 @@
     <!--second line of header search bar-->
     <div class="bottom">
       <h1 class="logoArea">
-        <a class="logo" title="ShoppingMall" href="###" target="_blank">
+        <router-link to="/home" class="logo" title="ShoppingMall">
           <img src="./images/logo.png" alt="" />
-        </a>
+        </router-link>
       </h1>
       <div class="searchArea">
         <form action="###" class="searchForm">
@@ -36,8 +36,13 @@
             type="text"
             id="autocomplete"
             class="input-error input-xxlarge"
+            v-model="keyword"
           />
-          <button class="sui-btn btn-xlarge btn-danger" type="button">
+          <button
+            class="sui-btn btn-xlarge btn-danger"
+            type="button"
+            @click="toSearch"
+          >
             search
           </button>
         </form>
@@ -50,6 +55,31 @@
 // export header component
 export default {
   name: 'Header',
+  data() {
+    return {
+      keyword: '',
+    };
+  },
+  methods: {
+    //config route parameter
+    toSearch() {
+      let location = {
+        //if use params in router object, have to give a name to the router
+        name: 'search',
+        // path: '/search',
+        //pass search keyword
+        params: {
+          //if params is empty then pass undefined into router object
+          keyword: this.keyword || undefined,
+        },
+        query: {
+          keyword: this.keyword.toUpperCase(),
+        },
+      };
+      this.$router.push(location);
+      this.$router.push(location).catch(() => {});
+    },
+  },
 };
 </script>
 <style lang="less" scoped>

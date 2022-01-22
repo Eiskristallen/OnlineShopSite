@@ -2,7 +2,8 @@
   <div>
     <!-- use components -->
     <Header></Header>
-    <Footer></Footer>
+    <router-view></router-view>
+    <Footer v-if="!$route.meta.isHide"></Footer>
   </div>
 </template>
 

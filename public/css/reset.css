@@ -100,7 +100,7 @@ html {
     overflow-y: scroll;
 }
 
-a:link:hover {
+a:hover {
     color: rgb(79, 76, 212) !important;
     text-decoration: underline;
 }

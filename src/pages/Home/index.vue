@@ -28,6 +28,15 @@ export default {
     Floor,
     Brand,
   },
+  mounted() {
+    this.getCategoryList();
+  },
+  methods: {
+    getCategoryList() {
+      //trigger the request data function in store
+      this.$store.dispatch('getCategoryList');
+    },
+  },
 };
 </script>
 

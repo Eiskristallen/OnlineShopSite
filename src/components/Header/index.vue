@@ -72,11 +72,11 @@ export default {
           //if params is empty then pass undefined into router object
           keyword: this.keyword || undefined,
         },
-        query: {
-          keyword: this.keyword.toUpperCase(),
-        },
       };
-      this.$router.push(location);
+      //check is query exsit when click search
+      if (this.$route.query) {
+        location.query = this.$route.query;
+      }
       this.$router.push(location).catch(() => {});
     },
   },

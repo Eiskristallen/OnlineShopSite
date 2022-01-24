@@ -5,7 +5,7 @@
     <Recommend />
     <Rank />
     <Like />
-    <Floor />
+    <Floor v-for="floor in floorList" :key="floor.id" :floor="floor" />
     <Brand />
   </div>
 </template>
@@ -17,6 +17,7 @@ import Rank from './Rank';
 import Like from './Like';
 import Floor from './Floor';
 import Brand from './Brand';
+import { mapState } from 'vuex';
 // router component Home
 export default {
   name: 'Home',
@@ -30,12 +31,21 @@ export default {
   },
   mounted() {
     this.getCategoryList();
+    this.getFloorList();
   },
   methods: {
     getCategoryList() {
       //trigger the request data function in store
       this.$store.dispatch('getCategoryList');
     },
+    getFloorList() {
+      this.$store.dispatch('getFloorList');
+    },
+  },
+  computed: {
+    ...mapState({
+      floorList: (state) => state.home.floorList,
+    }),
   },
 };
 </script>

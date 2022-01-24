@@ -5,19 +5,14 @@
       <div class="center">
         <!--banner-->
         <div class="swiper-container" id="mySwiper">
-          <div class="swiper-wrapper">
+          <div
+            class="swiper-wrapper"
+            v-for="banner in bannerList"
+            :key="banner.id"
+          >
             <div class="swiper-slide">
-              <img src="./images/banner1.jpg" />
+              <img :src="banner.imgUrl" />
             </div>
-            <!-- <div class="swiper-slide">
-              <img src="./images/banner2.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/banner3.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="./images/banner4.jpg" />
-            </div> -->
           </div>
           <!-- pagination -->
           <div class="swiper-pagination"></div>
@@ -101,8 +96,24 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name: 'ListContainer',
+  mounted() {
+    this.getBannerList();
+  },
+  methods: {
+    getBannerList() {
+      //trigger the request data function in store
+      this.$store.dispatch('getBannerList');
+    },
+  },
+  computed: {
+    //get banner data from state
+    ...mapState({
+      bannerList: (state) => state.home.bannerList,
+    }),
+  },
 };
 </script>
 

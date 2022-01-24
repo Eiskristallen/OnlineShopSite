@@ -1,0 +1,111 @@
+[{
+  "id": "001",
+  "name": "household",
+  "keywords": ["tv", "tv", "tv", "tv", "tv", "tv"],
+  "imgUrl": "/images/floor-1-1.png",
+  "navList": [{
+          "url": "#",
+          "text": "best sell"
+      },
+      {
+          "url": "#",
+          "text": "disaccount"
+      },
+      {
+          "url": "#",
+          "text": "kitchen"
+      },
+      {
+          "url": "#",
+          "text": "pan"
+      },
+      {
+          "url": "#",
+          "text": "spoon"
+      },
+      {
+          "url": "#",
+          "text": "fork"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      }
+  ],
+  "carouselList": [{
+          "id": "0011",
+          "imgUrl": "/images/floor-1-b01.png"
+      },
+      {
+          "id": "0012",
+          "imgUrl": "/images/floor-1-b02.png"
+      },
+      {
+          "id": "0013",
+          "imgUrl": "/images/floor-1-b03.png"
+      }
+  ],
+  "recommendList": [
+      "/images/floor-1-2.png",
+      "/images/floor-1-3.png",
+      "/images/floor-1-5.png",
+      "/images/floor-1-6.png"
+  ],
+  "bigImg": "/images/floor-1-4.png"
+},
+{
+  "id": "002",
+  "name": "phone",
+  "keywords": ["item", "item", "item", "item", "item", "item"],
+  "imgUrl": "/images/floor-1-1.png",
+  "navList": [{
+          "url": "#",
+          "text": "item"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      },
+      {
+          "url": "#",
+          "text": "item"
+      }
+  ],
+  "carouselList": [{
+          "id": "0011",
+          "imgUrl": "/images/floor-1-b01.png"
+      },
+      {
+          "id": "0012",
+          "imgUrl": "/images/floor-1-b02.png"
+      },
+      {
+          "id": "0013",
+          "imgUrl": "/images/floor-1-b03.png"
+      }
+  ],
+  "recommendList": [
+      "/images/floor-1-2.png",
+      "/images/floor-1-3.png",
+      "/images/floor-1-5.png",
+      "/images/floor-1-6.png"
+  ],
+  "bigImg": "/images/floor-1-4.png"
+}
+]

@@ -21,3 +21,15 @@ export const reqFloorList = () =>{
     method:'get'
   })
 }
+
+
+//retrive search list
+export const reqGoodsListInfo = (searchParams)=>{
+  return Ajax({
+    'url':'list',
+    method:'post',
+    data:searchParams
+  })
+}
+
+reqGoodsListInfo({brand:'apple'});

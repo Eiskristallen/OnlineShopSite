@@ -23,29 +23,7 @@
               <img :src="floor.imgUrl" />
             </div>
             <div class="floorBanner">
-              <div class="swiper-container" id="floor1Swiper">
-                <div class="swiper-wrapper">
-                  <div
-                    class="swiper-slide"
-                    v-for="carousel in floor.carouselList"
-                    :key="carousel.id"
-                  >
-                    <img :src="carousel.imgUrl" />
-                  </div>
-                  <!-- <div class="swiper-slide">
-                    <img src="./images/floor-1-b02.png" />
-                  </div>
-                  <div class="swiper-slide">
-                    <img src="./images/floor-1-b03.png" />
-                  </div> -->
-                </div>
-                <!-- if pagination is necessary -->
-                <div class="swiper-pagination"></div>
-
-                <!-- if navigation button is necessary -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
+              <SliderLoop :bannerList="floor.carouselList"></SliderLoop>
             </div>
             <div class="split">
               <span class="floor-x-line"></span>
@@ -76,10 +54,25 @@
 </template>
 
 <script>
+// import Swiper from 'swiper';
 export default {
   name: 'Floor',
   //receive floor data from home component
   props: ['floor'],
+  // mounted() {
+  //   new Swiper(this.$refs.floorSwiper, {
+  //     // If we need pagination
+  //     pagination: {
+  //       el: '.swiper-pagination',
+  //     },
+
+  //     // Navigation arrows
+  //     navigation: {
+  //       nextEl: '.swiper-button-next',
+  //       prevEl: '.swiper-button-prev',
+  //     },
+  //   });
+  // },
 };
 </script>
 

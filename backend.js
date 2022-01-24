@@ -3,8 +3,9 @@ const app = express();
 const port = 3000;
 
 app.get('/', function(req, res) {
-  res.send('Hello World!')
+  res.send('Hello Shooping mall!')
 });
+//return three layers list
 app.get('/product/getBaseCategoryList',function(req,res){
   res.send({
     code:200,
@@ -124,6 +125,59 @@ app.get('/product/getBaseCategoryList',function(req,res){
         }
     ]
   });
+})
+app.post('/list',function(req,res){
+  //return search data
+  res.send({
+    "code": 200,
+    "message": "success",
+    "data": {
+        "trademarkList": [
+            {
+                "tmId": 1,
+                "tmName": "Apple"
+            },
+            
+        ],
+        "attrsList": [
+            {
+                "attrId": 1,
+                "attrValueList": [
+                    "450-1000",
+                    "1000-2000"
+                ],
+                "attrName": "price"
+            },
+            
+        ],
+        "goodsList": [
+            {
+                "id": 1,
+                "defaultImg": "mobile04.jpg",
+                "title": "Apple iPhone",
+                "price": 1400,
+                "createTime": null,
+                "tmId": null,
+                "tmName": null,
+                "category1Id": null,
+                "category1Name": null,
+                "category2Id": null,
+                "category2Name": null,
+                "category3Id": null,
+                "category3Name": null,
+                "hotScore": 0,
+                "attrs": null
+            },
+            
+        ],
+        "total": 1,
+        "pageSize": 1,
+        "pageNo": 1,
+        "totalPages": 1
+    },
+    "ok": true
+}
+);
 })
 app.listen(port, function() {
   console.log(`Example app listening on port ${port}!`)

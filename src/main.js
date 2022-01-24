@@ -3,11 +3,13 @@ import App from './App.vue'
 import router from '@/router'
 import store from '@/store'
 import '@/mock/mockServer'
+import 'swiper/css/swiper.min.css';
 Vue.config.productionTip = false
 import TypeNav from '@/components/TypeNav'
-//register typenav globally
+import SliderLoop from '@/components/SliderLoop'
+//register global components
 Vue.component('TypeNav',TypeNav)
-
+Vue.component('SliderLoop',SliderLoop)
 Vue.config.productionTip = false
 
 new Vue({

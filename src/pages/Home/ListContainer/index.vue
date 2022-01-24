@@ -4,23 +4,7 @@
     <div class="sortList clearfix">
       <div class="center">
         <!--banner-->
-        <div class="swiper-container" id="mySwiper">
-          <div
-            class="swiper-wrapper"
-            v-for="banner in bannerList"
-            :key="banner.id"
-          >
-            <div class="swiper-slide">
-              <img :src="banner.imgUrl" />
-            </div>
-          </div>
-          <!-- pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- navigation buttom -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-        </div>
+        <SliderLoop :bannerList="bannerList"></SliderLoop>
       </div>
       <div class="right">
         <div class="news">
@@ -96,6 +80,9 @@
 </template>
 
 <script>
+// //import swiper
+// import Swiper from 'swiper';
+
 import { mapState } from 'vuex';
 export default {
   name: 'ListContainer',
